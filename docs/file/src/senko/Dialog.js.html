@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/senko/Dialog.js | senkowsh</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="JScirpt library for WSH that gathers various functions."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="senkowsh"><meta property="twitter:description" content="JScirpt library for WSH that gathers various functions."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/natade-jp/SenkoWSH"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#konpeito">konpeito</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/konpeito/Random.js~Random.html">Random</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#mojijs">mojijs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mojijs/Japanese.js~Japanese.html">Japanese</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mojijs/StringComparator.js~StringComparator.html">StringComparator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#senko">senko</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/CSV.js~CSV.html">CSV</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Dialog.js~Dialog.html">Dialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsArray.js~ExtendsArray.html">ExtendsArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsObject.js~ExtendsObject.html">ExtendsObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsString.js~ExtendsString.html">ExtendsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Format.js~Format.html">Format</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Robot.js~Robot.html">Robot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/SFile.js~SFile.html">SFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/System.js~System.html">System</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OpenDirectoryOption">OpenDirectoryOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OpenFileOption">OpenFileOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PopupOption">PopupOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SaveAsOption">SaveAsOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-KeyEventOption">KeyEventOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseEventFCodes">MouseEventFCodes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseEventOption">MouseEventOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RobotGetHandleData">RobotGetHandleData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VirtualKeyCode">VirtualKeyCode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VirtualKeyCodes">VirtualKeyCodes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WSHRobotPosition">WSHRobotPosition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WSHRobotRect">WSHRobotRect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SystemExecResult">SystemExecResult</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/senko/Dialog.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * The script is part of SenkoWSH.
+ * 
+ * AUTHOR:
+ *  natade (http://twitter.com/natadea)
+ * 
+ * LICENSE:
+ *  The MIT license https://opensource.org/licenses/MIT
+ */
+
+import System from &quot;./System&quot;;
+import SFile from &quot;./SFile&quot;;
+
+
+/**
+ * &#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x7528;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+ * @typedef {Object} PopupOption
+ * @property {number} [secondstowait=0] &#x30BF;&#x30A4;&#x30E0;&#x30A2;&#x30A6;&#x30C8;&#x6642;&#x9593;(0&#x3067;&#x7121;&#x52B9;)
+ * @property {string} [caption=&quot;&quot;] &#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x30D0;&#x30FC;
+ * @property {number} [type=0] Dialog.MB_YESNOCANCEL | Dialog.MB_DEFBUTTON3 &#x306A;&#x3069;
+ */
+
+/**
+ * &#x300C;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x304F;&#x300D;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x7528;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+ * @typedef {Object} OpenFileOption
+ * @property {string} [initial_directory] &#x521D;&#x671F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;(&quot;C:\&quot;&#x306A;&#x3069;)
+ * @property {string} [filter=&quot;All files(*.*)|*.*&quot;] &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5F62;&#x5F0F;&#xFF08;&quot;&#x753B;&#x50CF;&#x30D5;&#x30A1;&#x30A4;&#x30EB;(*.png;*.bmp)|*.png;*.bmp&quot;&#x306A;&#x3069;&#xFF09;
+ * @property {string} [title] &#x30BF;&#x30A4;&#x30C8;&#x30EB;(&#x300C;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x300D;&#x306A;&#x3069;)
+ */
+
+/**
+ * &#x300C;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3092;&#x958B;&#x304F;&#x300D;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x7528;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+ * @typedef {Object} OpenDirectoryOption
+ * @property {string} [initial_directory] &#x521D;&#x671F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;(&quot;C:\&quot;&#x306A;&#x3069;)
+ * @property {string} [title] &#x30BF;&#x30A4;&#x30C8;&#x30EB;(&#x300C;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x300D;&#x306A;&#x3069;)
+ */
+
+/**
+ * &#x300C;&#x540D;&#x524D;&#x3092;&#x4ED8;&#x3051;&#x3066;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x300D;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x7528;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+ * @typedef {Object} SaveAsOption
+ * @property {string} [initial_directory] &#x521D;&#x671F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;(&quot;C:\&quot;&#x306A;&#x3069;)
+ * @property {string} [default_ext] &#x62E1;&#x5F35;&#x5B50;&#x3092;&#x7701;&#x7565;&#x3057;&#x305F;&#x5834;&#x5408;&#x306E;&#x5024;(&quot;.txt&quot;&#x306A;&#x3069;)
+ * @property {string} [file_name] &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x306E;&#x521D;&#x671F;&#x5024;(&quot;&#x65B0;&#x3057;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;.txt&quot;&#x306A;&#x3069;)
+ * @property {string} [filter=&quot;All files(*.*)|*.*&quot;] &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5F62;&#x5F0F;&#xFF08;&quot;&#x753B;&#x50CF;&#x30D5;&#x30A1;&#x30A4;&#x30EB;(*.png;*.bmp)|*.png;*.bmp&quot;&#x306A;&#x3069;&#xFF09;
+ * @property {string} [title] &#x30BF;&#x30A4;&#x30C8;&#x30EB;(&#x300C;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x300D;&#x306A;&#x3069;)
+ */
+
+/**
+ * &#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x3092;&#x6271;&#x3046;&#x30AF;&#x30E9;&#x30B9;
+ */
+export default class Dialog {
+	
+	/**
+	 * &#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+	 * @param {string} text 
+	 * @param {PopupOption} [option]
+	 * @returns {number}
+	 */
+	static popupMessage(text, option) {
+		const secondstowait = option &amp;&amp; option.secondstowait ? option.secondstowait : 0;
+		const caption = option &amp;&amp; option.caption ? option.caption : &quot;&quot;;
+		const type = option &amp;&amp; option.type ? option.type : 0;
+		return WScript.CreateObject(&quot;WScript.Shell&quot;).Popup( text, secondstowait, caption, type );
+	}
+
+	/**
+	 * &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x304F;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+	 * @param {OpenFileOption} [option]
+	 * @returns {SFile|null}
+	 */
+	static popupOpenFile(option) {
+		/*
+		&#x4EE5;&#x4E0B;&#x306E;&#x884C;&#x3092;1&#x884C;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;
+		Add-Type -AssemblyName System.Windows.Forms;
+		$dialog = New-Object System.Windows.Forms.OpenFileDialog;
+		...
+		if($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){
+			$dialog.FileName;
+		}
+		*/
+		let command = &quot;Add-Type -AssemblyName System.Windows.Forms;$dialog = New-Object System.Windows.Forms.OpenFileDialog;&quot;;
+		command += &quot;$dialog.Filter = \&quot;&quot; + ((option &amp;&amp; option.filter) ? option.filter.replace(/&quot;/g, &quot;\\\&quot;&quot;) : &quot;All files(*.*)|*.*&quot;) + &quot;\&quot;;&quot;;
+		command += (option &amp;&amp; option.initial_directory) ? (&quot;$dialog.InitialDirectory = \&quot;&quot; + option.initial_directory.toString().replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += (option &amp;&amp; option.title) ? (&quot;$dialog.Title = \&quot;&quot; + option.title.replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += &quot;if($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){$dialog.FileName;}&quot;;
+		const select_text = System.PowerShell(command).trim();
+		if(select_text !== &quot;&quot;) {
+			return new SFile(select_text);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * &#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3092;&#x958B;&#x304F;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+	 * @param {OpenDirectoryOption} [option]
+	 * @returns {SFile|null}
+	 */
+	static popupOpenDirectory(option) {
+		const shell = new ActiveXObject(&quot;Shell.Application&quot;);
+		const caption = option &amp;&amp; option.title ? option.title : &quot;&quot;;
+		let folder;
+		if(option &amp;&amp; option.initial_directory) {
+			folder = shell.BrowseForFolder(0, caption, 0, option.initial_directory);
+		}
+		else {
+			folder = shell.BrowseForFolder(0, caption, 0);
+		}
+		if(folder !== null) {
+			return new SFile(folder.Self.Path);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * &#x540D;&#x524D;&#x3092;&#x4ED8;&#x3051;&#x3066;&#x4FDD;&#x5B58;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+	 * @param {SaveAsOption} [option]
+	 * @returns {SFile|null}
+	 */
+	static popupSaveAs(option) {
+		/*
+		&#x4EE5;&#x4E0B;&#x306E;&#x884C;&#x3092;1&#x884C;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;
+		Add-Type -AssemblyName System.Windows.Forms;
+		$dialog = New-Object System.Windows.Forms.SaveFileDialog;
+		...
+		if($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){
+			$dialog.FileName;
+		}
+		*/
+		let command = &quot;Add-Type -AssemblyName System.Windows.Forms;$dialog = New-Object System.Windows.Forms.SaveFileDialog;&quot;;
+		command += (option &amp;&amp; option.default_ext) ? (&quot;$dialog.DefaultExt = \&quot;&quot; + option.default_ext.replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += (option &amp;&amp; option.file_name) ? (&quot;$dialog.FileName = \&quot;&quot; + option.file_name.replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += (option &amp;&amp; option.filter) ? (&quot;$dialog.Filter = \&quot;&quot; + option.file_name.replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += (option &amp;&amp; option.initial_directory) ? (&quot;$dialog.InitialDirectory = \&quot;&quot; + option.initial_directory.toString().replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += (option &amp;&amp; option.title) ? (&quot;$dialog.Title = \&quot;&quot; + option.title.replace(/&quot;/g, &quot;\\\&quot;&quot;) + &quot;\&quot;;&quot;): &quot;&quot;;
+		command += &quot;$dialog.ShowHelp = true;&quot;;
+		command += &quot;$dialog.OverwritePrompt = true;&quot;;
+		command += &quot;if($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK){$dialog.FileName;}&quot;;
+		const select_text = System.PowerShell(command).trim();
+		if(select_text !== &quot;&quot;) {
+			return new SFile(select_text);
+		}
+		else {
+			return null;
+		}
+	}
+
+}
+
+/**
+ * &#x300C;OK&#x300D;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x914D;&#x7F6E;
+ * @type {number}
+ */
+Dialog.MB_OK				=  0;
+
+/**
+ * &#x300C;OK&#x300D;&#x3001;&#x300C;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;&#x300D;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x914D;&#x7F6E;
+ * @type {number}
+ */
+Dialog.MB_OKCANCEL			=  1;
+
+/**
+ * &#x300C;&#x4E2D;&#x6B62;&#x300D;&#x3001;&#x300C;&#x518D;&#x8A66;&#x884C;&#x300D;&#x3001;&#x300C;&#x7121;&#x8996;&#x300D;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x914D;&#x7F6E;
+ * @type {number}
+ */
+Dialog.MB_ABORTRETRYIGNORE	=  2;
+
+/**
+ * &#x300C;&#x306F;&#x3044;&#x300D;&#x3001;&#x300C;&#x3044;&#x3044;&#x3048;&#x300D;&#x3001;&#x300C;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;&#x300D;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x914D;&#x7F6E;
+ * @type {number}
+ */
+Dialog.MB_YESNOCANCEL		=  3;
+
+/**
+ * &#x300C;&#x306F;&#x3044;&#x300D;&#x3001;&#x300C;&#x3044;&#x3044;&#x3048;&#x300D;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x914D;&#x7F6E;
+ * @type {number}
+ */
+Dialog.MB_YESNO				=  4;
+
+/**
+ * &#x300C;&#x518D;&#x8A66;&#x884C;&#x300D;&#x3001;&#x300C;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;&#x300D;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x914D;&#x7F6E;
+ * @type {number}
+ */
+Dialog.MB_RETRYCANCEL		=  5;
+
+/**
+ * &#x4E2D;&#x6B62;&#x300C;Stop&#x300D;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x306E;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;
+ * @type {number}
+ */
+Dialog.MB_ICONSTOP			= 16;
+
+/**
+ * &#x8CEA;&#x554F;&#x300C;?&#x300D;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x306E;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;
+ * @type {number}
+ */
+Dialog.MB_ICONQUESTION		= 32;
+
+/**
+ * &#x8B66;&#x544A;&#x300C;!&#x300D;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x306E;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;
+ * @type {number}
+ */
+Dialog.MB_ICONWARNING		= 48;
+
+/**
+ * &#x60C5;&#x5831;&#x300C;i&#x300D;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x306E;&#x30C0;&#x30A4;&#x30A2;&#x30ED;&#x30B0;
+ * @type {number}
+ */
+Dialog.MB_ICONINFORMATION	= 64;
+
+/**
+ * &#x300C;&#x30DC;&#x30BF;&#x30F3;1&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.MB_DEFBUTTON1	= 0x0000;
+
+/**
+ * &#x300C;&#x30DC;&#x30BF;&#x30F3;2&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.MB_DEFBUTTON2	= 0x0100;
+
+/**
+ * &#x300C;&#x30DC;&#x30BF;&#x30F3;3&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.MB_DEFBUTTON3	= 0x0200;
+
+/**
+ * &#x300C;&#x30DC;&#x30BF;&#x30F3;4&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.MB_DEFBUTTON4	= 0x0300;
+
+/**
+ * &#x30BF;&#x30A4;&#x30E0;&#x30A2;&#x30A6;&#x30C8;&#x304C;&#x767A;&#x751F;
+ * @type {number}
+ */
+Dialog.IDTIMEOUT		= -1;
+
+/**
+ * &#x300C;OK&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDOK				= 1;
+
+/**
+ * &#x300C;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDCANCEL			= 2;
+
+/**
+ * &#x300C;&#x4E2D;&#x6B62;&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDABORT			= 3;
+
+/**
+ * &#x300C;&#x518D;&#x8A66;&#x884C;&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDRETRY			= 4;
+
+/**
+ * &#x300C;&#x7121;&#x8996;&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDIGNORE			= 5;
+
+/**
+ * &#x300C;&#x306F;&#x3044;&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDYES			= 6;
+
+/**
+ * &#x300C;&#x3044;&#x3044;&#x3048;&#x300D;&#x3092;&#x9078;&#x629E;
+ * @type {number}
+ */
+Dialog.IDNO				= 7;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

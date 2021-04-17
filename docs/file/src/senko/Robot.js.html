@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/senko/Robot.js | senkowsh</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="JScirpt library for WSH that gathers various functions."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="senkowsh"><meta property="twitter:description" content="JScirpt library for WSH that gathers various functions."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/natade-jp/SenkoWSH"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#konpeito">konpeito</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/konpeito/Random.js~Random.html">Random</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#mojijs">mojijs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mojijs/Japanese.js~Japanese.html">Japanese</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mojijs/StringComparator.js~StringComparator.html">StringComparator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#senko">senko</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/CSV.js~CSV.html">CSV</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Dialog.js~Dialog.html">Dialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsArray.js~ExtendsArray.html">ExtendsArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsObject.js~ExtendsObject.html">ExtendsObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsString.js~ExtendsString.html">ExtendsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Format.js~Format.html">Format</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Robot.js~Robot.html">Robot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/SFile.js~SFile.html">SFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/System.js~System.html">System</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OpenDirectoryOption">OpenDirectoryOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OpenFileOption">OpenFileOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PopupOption">PopupOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SaveAsOption">SaveAsOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-KeyEventOption">KeyEventOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseEventFCodes">MouseEventFCodes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseEventOption">MouseEventOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RobotGetHandleData">RobotGetHandleData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VirtualKeyCode">VirtualKeyCode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VirtualKeyCodes">VirtualKeyCodes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WSHRobotPosition">WSHRobotPosition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WSHRobotRect">WSHRobotRect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SystemExecResult">SystemExecResult</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/senko/Robot.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * The script is part of SenkoWSH.
+ * 
+ * AUTHOR:
+ *  natade (http://twitter.com/natadea)
+ * 
+ * LICENSE:
+ *  The MIT license https://opensource.org/licenses/MIT
+ */
+
+import System from &quot;./System&quot;;
+
+/**
+ * &#x5927;&#x304D;&#x3055;&#x60C5;&#x5831;
+ * @typedef {Object} WSHRobotRect
+ * @property {number} x &#x5EA7;&#x6A19;x
+ * @property {number} y &#x5EA7;&#x6A19;y
+ * @property {number} width &#x6A2A;&#x5E45;
+ * @property {number} height &#x7E26;&#x5E45;
+ */
+
+/**
+ * &#x4F4D;&#x7F6E;&#x60C5;&#x5831;
+ * @typedef {Object} WSHRobotPosition
+ * @property {number} x &#x5EA7;&#x6A19;x
+ * @property {number} y &#x5EA7;&#x6A19;y
+ */
+
+/**
+ * &#x4EEE;&#x60F3;&#x30AD;&#x30FC;&#x30B3;&#x30FC;&#x30C9;
+ * @typedef {Object} VirtualKeyCode
+ * @property {number} code
+ */
+
+/**
+ * &#x4EEE;&#x60F3;&#x30AD;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x4E00;&#x89A7;
+ * @typedef {Object} VirtualKeyCodes
+ * @property {VirtualKeyCode} VK_LBUTTON
+ * @property {VirtualKeyCode} VK_RBUTTON
+ * @property {VirtualKeyCode} VK_CANCEL
+ * @property {VirtualKeyCode} VK_MBUTTON
+ * @property {VirtualKeyCode} VK_XBUTTON1
+ * @property {VirtualKeyCode} VK_XBUTTON2
+ * @property {VirtualKeyCode} VK_BACK
+ * @property {VirtualKeyCode} VK_TAB
+ * @property {VirtualKeyCode} VK_CLEAR
+ * @property {VirtualKeyCode} VK_RETURN
+ * @property {VirtualKeyCode} VK_SHIFT
+ * @property {VirtualKeyCode} VK_CONTROL
+ * @property {VirtualKeyCode} VK_MENU
+ * @property {VirtualKeyCode} VK_PAUSE
+ * @property {VirtualKeyCode} VK_CAPITAL
+ * @property {VirtualKeyCode} VK_KANA
+ * @property {VirtualKeyCode} VK_HANGEUL
+ * @property {VirtualKeyCode} VK_HANGUL
+ * @property {VirtualKeyCode} VK_JUNJA
+ * @property {VirtualKeyCode} VK_FINAL
+ * @property {VirtualKeyCode} VK_HANJA
+ * @property {VirtualKeyCode} VK_KANJI
+ * @property {VirtualKeyCode} VK_ESCAPE
+ * @property {VirtualKeyCode} VK_CONVERT
+ * @property {VirtualKeyCode} VK_NONCONVERT
+ * @property {VirtualKeyCode} VK_ACCEPT
+ * @property {VirtualKeyCode} VK_MODECHANGE
+ * @property {VirtualKeyCode} VK_SPACE
+ * @property {VirtualKeyCode} VK_PRIOR
+ * @property {VirtualKeyCode} VK_NEXT
+ * @property {VirtualKeyCode} VK_END
+ * @property {VirtualKeyCode} VK_HOME
+ * @property {VirtualKeyCode} VK_LEFT
+ * @property {VirtualKeyCode} VK_UP
+ * @property {VirtualKeyCode} VK_RIGHT
+ * @property {VirtualKeyCode} VK_DOWN
+ * @property {VirtualKeyCode} VK_SELECT
+ * @property {VirtualKeyCode} VK_PRINT
+ * @property {VirtualKeyCode} VK_EXECUTE
+ * @property {VirtualKeyCode} VK_SNAPSHOT
+ * @property {VirtualKeyCode} VK_INSERT
+ * @property {VirtualKeyCode} VK_DELETE
+ * @property {VirtualKeyCode} VK_HELP
+ * @property {VirtualKeyCode} VK_0
+ * @property {VirtualKeyCode} VK_1
+ * @property {VirtualKeyCode} VK_2
+ * @property {VirtualKeyCode} VK_3
+ * @property {VirtualKeyCode} VK_4
+ * @property {VirtualKeyCode} VK_5
+ * @property {VirtualKeyCode} VK_6
+ * @property {VirtualKeyCode} VK_7
+ * @property {VirtualKeyCode} VK_8
+ * @property {VirtualKeyCode} VK_9
+ * @property {VirtualKeyCode} VK_A
+ * @property {VirtualKeyCode} VK_B
+ * @property {VirtualKeyCode} VK_C
+ * @property {VirtualKeyCode} VK_D
+ * @property {VirtualKeyCode} VK_E
+ * @property {VirtualKeyCode} VK_F
+ * @property {VirtualKeyCode} VK_G
+ * @property {VirtualKeyCode} VK_H
+ * @property {VirtualKeyCode} VK_I
+ * @property {VirtualKeyCode} VK_J
+ * @property {VirtualKeyCode} VK_K
+ * @property {VirtualKeyCode} VK_L
+ * @property {VirtualKeyCode} VK_M
+ * @property {VirtualKeyCode} VK_N
+ * @property {VirtualKeyCode} VK_O
+ * @property {VirtualKeyCode} VK_P
+ * @property {VirtualKeyCode} VK_Q
+ * @property {VirtualKeyCode} VK_R
+ * @property {VirtualKeyCode} VK_S
+ * @property {VirtualKeyCode} VK_T
+ * @property {VirtualKeyCode} VK_U
+ * @property {VirtualKeyCode} VK_V
+ * @property {VirtualKeyCode} VK_W
+ * @property {VirtualKeyCode} VK_X
+ * @property {VirtualKeyCode} VK_Y
+ * @property {VirtualKeyCode} VK_Z
+ * @property {VirtualKeyCode} VK_LWIN
+ * @property {VirtualKeyCode} VK_RWIN
+ * @property {VirtualKeyCode} VK_APPS
+ * @property {VirtualKeyCode} VK_SLEEP
+ * @property {VirtualKeyCode} VK_NUMPAD0
+ * @property {VirtualKeyCode} VK_NUMPAD1
+ * @property {VirtualKeyCode} VK_NUMPAD2
+ * @property {VirtualKeyCode} VK_NUMPAD3
+ * @property {VirtualKeyCode} VK_NUMPAD4
+ * @property {VirtualKeyCode} VK_NUMPAD5
+ * @property {VirtualKeyCode} VK_NUMPAD6
+ * @property {VirtualKeyCode} VK_NUMPAD7
+ * @property {VirtualKeyCode} VK_NUMPAD8
+ * @property {VirtualKeyCode} VK_NUMPAD9
+ * @property {VirtualKeyCode} VK_MULTIPLY
+ * @property {VirtualKeyCode} VK_ADD
+ * @property {VirtualKeyCode} VK_SEPARATOR
+ * @property {VirtualKeyCode} VK_SUBTRACT
+ * @property {VirtualKeyCode} VK_DECIMAL
+ * @property {VirtualKeyCode} VK_DIVIDE
+ * @property {VirtualKeyCode} VK_F1
+ * @property {VirtualKeyCode} VK_F2
+ * @property {VirtualKeyCode} VK_F3
+ * @property {VirtualKeyCode} VK_F4
+ * @property {VirtualKeyCode} VK_F5
+ * @property {VirtualKeyCode} VK_F6
+ * @property {VirtualKeyCode} VK_F7
+ * @property {VirtualKeyCode} VK_F8
+ * @property {VirtualKeyCode} VK_F9
+ * @property {VirtualKeyCode} VK_F10
+ * @property {VirtualKeyCode} VK_F11
+ * @property {VirtualKeyCode} VK_F12
+ * @property {VirtualKeyCode} VK_F13
+ * @property {VirtualKeyCode} VK_F14
+ * @property {VirtualKeyCode} VK_F15
+ * @property {VirtualKeyCode} VK_F16
+ * @property {VirtualKeyCode} VK_F17
+ * @property {VirtualKeyCode} VK_F18
+ * @property {VirtualKeyCode} VK_F19
+ * @property {VirtualKeyCode} VK_F20
+ * @property {VirtualKeyCode} VK_F21
+ * @property {VirtualKeyCode} VK_F22
+ * @property {VirtualKeyCode} VK_F23
+ * @property {VirtualKeyCode} VK_F24
+ * @property {VirtualKeyCode} VK_NUMLOCK
+ * @property {VirtualKeyCode} VK_SCROLL
+ * @property {VirtualKeyCode} VK_LSHIFT
+ * @property {VirtualKeyCode} VK_RSHIFT
+ * @property {VirtualKeyCode} VK_LCONTROL
+ * @property {VirtualKeyCode} VK_RCONTROL
+ * @property {VirtualKeyCode} VK_LMENU
+ * @property {VirtualKeyCode} VK_RMENU
+ * @property {VirtualKeyCode} VK_BROWSER_BACK
+ * @property {VirtualKeyCode} VK_BROWSER_FORWARD
+ * @property {VirtualKeyCode} VK_BROWSER_REFRESH
+ * @property {VirtualKeyCode} VK_BROWSER_STOP
+ * @property {VirtualKeyCode} VK_BROWSER_SEARCH
+ * @property {VirtualKeyCode} VK_BROWSER_FAVORITES
+ * @property {VirtualKeyCode} VK_BROWSER_HOME
+ * @property {VirtualKeyCode} VK_VOLUME_MUTE
+ * @property {VirtualKeyCode} VK_VOLUME_DOWN
+ * @property {VirtualKeyCode} VK_VOLUME_UP
+ * @property {VirtualKeyCode} VK_MEDIA_NEXT_TRACK
+ * @property {VirtualKeyCode} VK_MEDIA_PREV_TRACK
+ * @property {VirtualKeyCode} VK_MEDIA_STOP
+ * @property {VirtualKeyCode} VK_MEDIA_PLAY_PAUSE
+ * @property {VirtualKeyCode} VK_LAUNCH_MAIL
+ * @property {VirtualKeyCode} VK_LAUNCH_MEDIA_SELECT
+ * @property {VirtualKeyCode} VK_LAUNCH_APP1
+ * @property {VirtualKeyCode} VK_LAUNCH_APP2
+ * @property {VirtualKeyCode} VK_OEM_1
+ * @property {VirtualKeyCode} VK_OEM_PLUS
+ * @property {VirtualKeyCode} VK_OEM_COMMA
+ * @property {VirtualKeyCode} VK_OEM_MINUS
+ * @property {VirtualKeyCode} VK_OEM_PERIOD
+ * @property {VirtualKeyCode} VK_OEM_2
+ * @property {VirtualKeyCode} VK_OEM_3
+ * @property {VirtualKeyCode} VK_OEM_4
+ * @property {VirtualKeyCode} VK_OEM_5
+ * @property {VirtualKeyCode} VK_OEM_6
+ * @property {VirtualKeyCode} VK_OEM_7
+ * @property {VirtualKeyCode} VK_OEM_8
+ * @property {VirtualKeyCode} VK_PROCESSKEY
+ * @property {VirtualKeyCode} VK_ATTN
+ * @property {VirtualKeyCode} VK_CRSEL
+ * @property {VirtualKeyCode} VK_EXSEL
+ * @property {VirtualKeyCode} VK_EREOF
+ * @property {VirtualKeyCode} VK_PLAY
+ * @property {VirtualKeyCode} VK_ZOOM
+ * @property {VirtualKeyCode} VK_NONAME
+ * @property {VirtualKeyCode} VK_PA1
+ * @property {VirtualKeyCode} VK_OEM_CLEAR
+ */
+
+/**
+ * &#x4EEE;&#x60F3;&#x30AD;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x4E00;&#x89A7;
+ * @type {VirtualKeyCodes}
+ */
+const VK_DATA = {
+	VK_LBUTTON	:{code:0x01},
+	VK_RBUTTON	:{code:0x02},
+	VK_CANCEL	:{code:0x03},
+	VK_MBUTTON	:{code:0x04},
+	VK_XBUTTON1	:{code:0x05},
+	VK_XBUTTON2	:{code:0x06},
+	VK_BACK	:{code:0x08},
+	VK_TAB	:{code:0x09},
+	VK_CLEAR	:{code:0x0C},
+	VK_RETURN	:{code:0x0D},
+	VK_SHIFT	:{code:0x10},
+	VK_CONTROL	:{code:0x11},
+	VK_MENU	:{code:0x12},
+	VK_PAUSE	:{code:0x13},
+	VK_CAPITAL	:{code:0x14},
+	VK_KANA	:{code:0x15},
+	VK_HANGEUL	:{code:0x15},
+	VK_HANGUL	:{code:0x15},
+	VK_JUNJA	:{code:0x17},
+	VK_FINAL	:{code:0x18},
+	VK_HANJA	:{code:0x19},
+	VK_KANJI	:{code:0x19},
+	VK_ESCAPE	:{code:0x1B},
+	VK_CONVERT	:{code:0x1C},
+	VK_NONCONVERT	:{code:0x1D},
+	VK_ACCEPT	:{code:0x1E},
+	VK_MODECHANGE	:{code:0x1F},
+	VK_SPACE	:{code:0x20},
+	VK_PRIOR	:{code:0x21},
+	VK_NEXT	:{code:0x22},
+	VK_END	:{code:0x23},
+	VK_HOME	:{code:0x24},
+	VK_LEFT	:{code:0x25},
+	VK_UP	:{code:0x26},
+	VK_RIGHT	:{code:0x27},
+	VK_DOWN	:{code:0x28},
+	VK_SELECT	:{code:0x29},
+	VK_PRINT	:{code:0x2A},
+	VK_EXECUTE	:{code:0x2B},
+	VK_SNAPSHOT	:{code:0x2C},
+	VK_INSERT	:{code:0x2D},
+	VK_DELETE	:{code:0x2E},
+	VK_HELP	:{code:0x2F},
+	VK_0	:{code:0x30},
+	VK_1	:{code:0x31},
+	VK_2	:{code:0x32},
+	VK_3	:{code:0x33},
+	VK_4	:{code:0x34},
+	VK_5	:{code:0x35},
+	VK_6	:{code:0x36},
+	VK_7	:{code:0x37},
+	VK_8	:{code:0x38},
+	VK_9	:{code:0x39},
+	VK_A	:{code:0x41},
+	VK_B	:{code:0x42},
+	VK_C	:{code:0x43},
+	VK_D	:{code:0x44},
+	VK_E	:{code:0x45},
+	VK_F	:{code:0x46},
+	VK_G	:{code:0x47},
+	VK_H	:{code:0x48},
+	VK_I	:{code:0x49},
+	VK_J	:{code:0x4A},
+	VK_K	:{code:0x4B},
+	VK_L	:{code:0x4C},
+	VK_M	:{code:0x4D},
+	VK_N	:{code:0x4E},
+	VK_O	:{code:0x4F},
+	VK_P	:{code:0x50},
+	VK_Q	:{code:0x51},
+	VK_R	:{code:0x52},
+	VK_S	:{code:0x53},
+	VK_T	:{code:0x54},
+	VK_U	:{code:0x55},
+	VK_V	:{code:0x56},
+	VK_W	:{code:0x57},
+	VK_X	:{code:0x58},
+	VK_Y	:{code:0x59},
+	VK_Z	:{code:0x5A},
+	VK_LWIN	:{code:0x5B},
+	VK_RWIN	:{code:0x5C},
+	VK_APPS	:{code:0x5D},
+	VK_SLEEP	:{code:0x5F},
+	VK_NUMPAD0	:{code:0x60},
+	VK_NUMPAD1	:{code:0x61},
+	VK_NUMPAD2	:{code:0x62},
+	VK_NUMPAD3	:{code:0x63},
+	VK_NUMPAD4	:{code:0x64},
+	VK_NUMPAD5	:{code:0x65},
+	VK_NUMPAD6	:{code:0x66},
+	VK_NUMPAD7	:{code:0x67},
+	VK_NUMPAD8	:{code:0x68},
+	VK_NUMPAD9	:{code:0x69},
+	VK_MULTIPLY	:{code:0x6A},
+	VK_ADD	:{code:0x6B},
+	VK_SEPARATOR	:{code:0x6C},
+	VK_SUBTRACT	:{code:0x6D},
+	VK_DECIMAL	:{code:0x6E},
+	VK_DIVIDE	:{code:0x6F},
+	VK_F1	:{code:0x70},
+	VK_F2	:{code:0x71},
+	VK_F3	:{code:0x72},
+	VK_F4	:{code:0x73},
+	VK_F5	:{code:0x74},
+	VK_F6	:{code:0x75},
+	VK_F7	:{code:0x76},
+	VK_F8	:{code:0x77},
+	VK_F9	:{code:0x78},
+	VK_F10	:{code:0x79},
+	VK_F11	:{code:0x7A},
+	VK_F12	:{code:0x7B},
+	VK_F13	:{code:0x7C},
+	VK_F14	:{code:0x7D},
+	VK_F15	:{code:0x7E},
+	VK_F16	:{code:0x7F},
+	VK_F17	:{code:0x80},
+	VK_F18	:{code:0x81},
+	VK_F19	:{code:0x82},
+	VK_F20	:{code:0x83},
+	VK_F21	:{code:0x84},
+	VK_F22	:{code:0x85},
+	VK_F23	:{code:0x86},
+	VK_F24	:{code:0x87},
+	VK_NUMLOCK	:{code:0x90},
+	VK_SCROLL	:{code:0x91},
+	VK_LSHIFT	:{code:0xA0},
+	VK_RSHIFT	:{code:0xA1},
+	VK_LCONTROL	:{code:0xA2},
+	VK_RCONTROL	:{code:0xA3},
+	VK_LMENU	:{code:0xA4},
+	VK_RMENU	:{code:0xA5},
+	VK_BROWSER_BACK	:{code:0xA6},
+	VK_BROWSER_FORWARD	:{code:0xA7},
+	VK_BROWSER_REFRESH	:{code:0xA8},
+	VK_BROWSER_STOP	:{code:0xA9},
+	VK_BROWSER_SEARCH	:{code:0xAA},
+	VK_BROWSER_FAVORITES	:{code:0xAB},
+	VK_BROWSER_HOME	:{code:0xAC},
+	VK_VOLUME_MUTE	:{code:0xAD},
+	VK_VOLUME_DOWN	:{code:0xAE},
+	VK_VOLUME_UP	:{code:0xAF},
+	VK_MEDIA_NEXT_TRACK	:{code:0xB0},
+	VK_MEDIA_PREV_TRACK	:{code:0xB1},
+	VK_MEDIA_STOP	:{code:0xB2},
+	VK_MEDIA_PLAY_PAUSE	:{code:0xB3},
+	VK_LAUNCH_MAIL	:{code:0xB4},
+	VK_LAUNCH_MEDIA_SELECT	:{code:0xB5},
+	VK_LAUNCH_APP1	:{code:0xB6},
+	VK_LAUNCH_APP2	:{code:0xB7},
+	VK_OEM_1	:{code:0xBA},
+	VK_OEM_PLUS	:{code:0xBB},
+	VK_OEM_COMMA	:{code:0xBC},
+	VK_OEM_MINUS	:{code:0xBD},
+	VK_OEM_PERIOD	:{code:0xBE},
+	VK_OEM_2	:{code:0xBF},
+	VK_OEM_3	:{code:0xC0},
+	VK_OEM_4	:{code:0xDB},
+	VK_OEM_5	:{code:0xDC},
+	VK_OEM_6	:{code:0xDD},
+	VK_OEM_7	:{code:0xDE},
+	VK_OEM_8	:{code:0xDF},
+	VK_PROCESSKEY	:{code:0xE5},
+	VK_ATTN	:{code:0xF6},
+	VK_CRSEL	:{code:0xF7},
+	VK_EXSEL	:{code:0xF8},
+	VK_EREOF	:{code:0xF9},
+	VK_PLAY	:{code:0xFA},
+	VK_ZOOM	:{code:0xFB},
+	VK_NONAME	:{code:0xFC},
+	VK_PA1	:{code:0xFD},
+	VK_OEM_CLEAR	:{code:0xFE}
+};
+
+/**
+ * &#x30DE;&#x30A6;&#x30B9;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x7528;&#x30B3;&#x30FC;&#x30C9;
+ * @typedef {Object} MouseEventFCodes
+ * @property {number} MOUSEEVENTF_ABSOLUTE
+ * @property {number} MOUSEEVENTF_MOVE
+ * @property {number} MOUSEEVENTF_LEFTDOWN
+ * @property {number} MOUSEEVENTF_LEFTUP
+ * @property {number} MOUSEEVENTF_RIGHTDOWN
+ * @property {number} MOUSEEVENTF_RIGHTUP
+ * @property {number} MOUSEEVENTF_MIDDLEDOWN
+ * @property {number} MOUSEEVENTF_MIDDLEUP
+ * @property {number} MOUSEEVENTF_WHEEL
+ * @property {number} MOUSEEVENTF_XDOWN
+ * @property {number} MOUSEEVENTF_XUP
+ */
+
+/**
+ * &#x30DE;&#x30A6;&#x30B9;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x7528;&#x30B3;&#x30FC;&#x30C9;&#x4E00;&#x89A7;
+ * @type {MouseEventFCodes}
+ */
+const MOUSEEVENTF_DATA = {
+	MOUSEEVENTF_ABSOLUTE	:0x8000,
+	MOUSEEVENTF_MOVE		:0x0001,
+	MOUSEEVENTF_LEFTDOWN	:0x0002,
+	MOUSEEVENTF_LEFTUP		:0x0004,
+	MOUSEEVENTF_RIGHTDOWN	:0x0008,
+	MOUSEEVENTF_RIGHTUP		:0x0010,
+	MOUSEEVENTF_MIDDLEDOWN	:0x0020,
+	MOUSEEVENTF_MIDDLEUP	:0x0040,
+	MOUSEEVENTF_WHEEL		:0x0800,
+	MOUSEEVENTF_XDOWN		:0x0080,
+	MOUSEEVENTF_XUP			:0x0100
+};
+
+/**
+ * &#x30AD;&#x30FC;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x767A;&#x751F;&#x6642;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+ * @typedef {Object} KeyEventOption
+ * @property {number} [count_max=1] &#x7E70;&#x308A;&#x8FD4;&#x3059;&#x56DE;&#x6570;
+ * @property {boolean} [is_not_pushed=false] &#x62BC;&#x3055;&#x306A;&#x3044;
+ * @property {boolean} [is_not_released=false] &#x96E2;&#x3055;&#x306A;&#x3044;
+ * @property {number} [push_time_sec=0] &#x62BC;&#x4E0B;&#x6642;&#x9593;
+ * @property {boolean} [is_pressed_shift=false]
+ * @property {boolean} [is_pressed_alt=false]
+ * @property {boolean} [is_pressed_ctrl=false]
+ */
+
+/**
+ * &#x30DE;&#x30A6;&#x30B9;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x767A;&#x751F;&#x6642;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+ * @typedef {Object} MouseEventOption
+ * @property {number} [count_max=1] &#x7E70;&#x308A;&#x8FD4;&#x3059;&#x56DE;&#x6570;
+ * @property {boolean} [is_not_pushed=false] &#x62BC;&#x3055;&#x306A;&#x3044;
+ * @property {boolean} [is_not_released=false] &#x96E2;&#x3055;&#x306A;&#x3044;
+ * @property {number} [push_time_sec=0] &#x62BC;&#x4E0B;&#x6642;&#x9593;
+ */
+
+/**
+ * &#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x969B;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x30C7;&#x30FC;&#x30BF;
+ * @typedef {Object} RobotGetHandleData
+ * @property {string|number} [classname=0] &#x30AF;&#x30E9;&#x30B9;&#x540D;
+ * @property {string|number} [windowtext=0] &#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x540D;
+ */
+
+/**
+ * &#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x3084;&#x30DE;&#x30A6;&#x30B9;&#x306A;&#x3069;&#x3092;&#x81EA;&#x52D5;&#x64CD;&#x4F5C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30AF;&#x30E9;&#x30B9;
+ */
+export default class Robot {
+	
+	/**
+	 * &#x30AD;&#x30FC;&#x3092;&#x5165;&#x529B;&#x3059;&#x308B;
+	 * @param {VirtualKeyCode} vkcode - &#x30AD;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#xFF08;&#x5229;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x3001;Robot.getVK() &#x3067;&#x53D6;&#x5F97;&#x53EF;&#x80FD;&#xFF09;
+	 * @param {KeyEventOption} [option] - &#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+	 */
+	static setKeyEvent(vkcode, option) {
+		const KEYEVENTF_KEYUP = 2;
+		const count_max = (option &amp;&amp; option.count_max) ? option.count_max: 1;
+		let time_ms = (option &amp;&amp; option.push_time_sec) ? ((option.push_time_sec * 1000) | 0 ): 0;
+		time_ms = Math.max(time_ms , 1); // 1&#x4EE5;&#x4E0A;&#x306B;&#x3059;&#x308B;
+		let code = &quot;for ($i=0; $i -lt &quot; + count_max + &quot;; $i++){&quot;;
+		{
+			if(option &amp;&amp; option.is_pressed_shift) {
+				code += &quot;$api::keybd_event(&quot; + VK_DATA.VK_SHIFT.code + &quot;, 0, 0, 0);&quot;;
+			}
+			if(option &amp;&amp; option.is_pressed_alt) {
+				code += &quot;$api::keybd_event(&quot; + VK_DATA.VK_MENU.code + &quot;, 0, 0, 0);&quot;;
+			}
+			if(option &amp;&amp; option.is_pressed_ctrl) {
+				code += &quot;$api::keybd_event(&quot; + VK_DATA.VK_CONTROL.code + &quot;, 0, 0, 0);&quot;;
+			}
+			if(!option || !option.is_not_pushed) {
+				code += &quot;$api::keybd_event(&quot; + vkcode.code + &quot;, 0, 0, 0);&quot;;
+			}
+		}
+		if(option &amp;&amp; option.push_time_sec) {
+			code += &quot;Start-Sleep -m &quot; + time_ms + &quot;;&quot;;
+		}
+		{
+			if(!option || !option.is_not_released) {
+				code += &quot;$api::keybd_event(&quot; + vkcode.code + &quot;, 0, &quot; + KEYEVENTF_KEYUP + &quot;, 0);&quot;;
+			}
+			if(option &amp;&amp; option.is_pressed_ctrl) {
+				code += &quot;$api::keybd_event(&quot; + VK_DATA.VK_CONTROL.code + &quot;, 0, &quot; + KEYEVENTF_KEYUP + &quot;, 0);&quot;;
+			}
+			if(option &amp;&amp; option.is_pressed_alt) {
+				code += &quot;$api::keybd_event(&quot; + VK_DATA.VK_MENU.code + &quot;, 0, &quot; + KEYEVENTF_KEYUP + &quot;, 0);&quot;;
+			}
+			if(option &amp;&amp; option.is_pressed_shift) {
+				code += &quot;$api::keybd_event(&quot; + VK_DATA.VK_SHIFT.code + &quot;, 0, &quot; + KEYEVENTF_KEYUP + &quot;, 0);&quot;;
+			}
+		}
+		code += &quot;}&quot;;
+		System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;void keybd_event(byte bVk, byte bScan, uint dwFlags, uint dwExtraInfo)&quot;,
+			code
+		);
+	}
+	
+	/**
+	 * &#x4EEE;&#x60F3;&#x30AD;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;
+	 * @returns {VirtualKeyCodes} 
+	 */
+	static getVK() {
+		return VK_DATA;
+	}
+
+	/**
+	 * &#x30DE;&#x30A6;&#x30B9;&#x306E;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3092;&#x884C;&#x3046;
+	 * @param {string} type - &quot;LEFT&quot;, &quot;RIGHT&quot;, &quot;CLICK&quot;, &quot;DOUBLE_CLICK&quot;&#x3068;&#x3044;&#x3063;&#x305F;&#x6587;&#x5B57;&#x5217;
+	 * @param {KeyEventOption} [option] - &#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;
+	 */
+	static setMouseEvent(type, option) {
+		let count_max = (option &amp;&amp; option.count_max) ? option.count_max: 1;
+		let time_ms = (option &amp;&amp; option.push_time_sec) ? ((option.push_time_sec * 1000) | 0 ): 0;
+		time_ms = Math.max(time_ms , 1); // 1&#x4EE5;&#x4E0A;&#x306B;&#x3059;&#x308B;
+		let target = type.toUpperCase().trim();
+		if(target === &quot;CLICK&quot;) {
+			count_max = 1;
+			target = &quot;LEFT&quot;;
+		}
+		else if(target === &quot;DOUBLE_CLICK&quot;) {
+			count_max = 2;
+			target = &quot;LEFT&quot;;
+		}
+		let pushed_code;
+		let released_code;
+		if(target === &quot;LEFT&quot;) {
+			pushed_code		= MOUSEEVENTF_DATA.MOUSEEVENTF_LEFTDOWN;
+			released_code	= MOUSEEVENTF_DATA.MOUSEEVENTF_LEFTUP;
+		}
+		else if((target === &quot;CENTER&quot;) || (target === &quot;MIDDLE&quot;)) {
+			pushed_code		= MOUSEEVENTF_DATA.MOUSEEVENTF_MIDDLEDOWN;
+			released_code	= MOUSEEVENTF_DATA.MOUSEEVENTF_MIDDLEUP;
+		}
+		if(target === &quot;RIGHT&quot;) {
+			pushed_code		= MOUSEEVENTF_DATA.MOUSEEVENTF_RIGHTDOWN;
+			released_code	= MOUSEEVENTF_DATA.MOUSEEVENTF_RIGHTUP;
+		}
+		let code = &quot;for ($i=0; $i -lt &quot; + count_max + &quot;; $i++){&quot;;
+		if(!option || !option.is_not_pushed) {
+			code += &quot;$api::mouse_event(&quot; + pushed_code + &quot;, 0, 0, 0, 0);&quot;;
+		}
+		if(option &amp;&amp; option.push_time_sec) {
+			code += &quot;Start-Sleep -m &quot; + time_ms + &quot;;&quot;;
+		}
+		if(!option || !option.is_not_released) {
+			code += &quot;$api::mouse_event(&quot; + released_code + &quot;, 0, 0, 0, 0);&quot;;
+		}
+		code += &quot;}&quot;;
+		System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo)&quot;,
+			code
+		);
+	}
+
+	/**
+	 * &#x30DE;&#x30A6;&#x30B9;&#x306E;&#x5EA7;&#x6A19;&#x3092;&#x8ABF;&#x3079;&#x308B;
+	 * @returns {WSHRobotPosition}
+	 */
+	static getCursorPosition() {
+		/*
+		&#x4EE5;&#x4E0B;&#x306E;&#x884C;&#x3092;1&#x884C;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;
+		[void] [System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Windows.Forms&quot;);
+		$X = [System.Windows.Forms.Cursor]::Position.X;
+		$Y = [System.Windows.Forms.Cursor]::Position.Y;
+		&quot;$X,$Y&quot;
+		*/
+		// eslint-disable-next-line quotes
+		const text = System.PowerShell(&apos;[void] [System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Windows.Forms&quot;);$X = [System.Windows.Forms.Cursor]::Position.X;$Y = [System.Windows.Forms.Cursor]::Position.Y;&quot;$X,$Y&quot;&apos;);
+		const pos_data = text.split(&quot;,&quot;);
+		const x = parseFloat(pos_data[0]) | 0;
+		const y = parseFloat(pos_data[1]) | 0;
+		return {
+			x : x, y : y
+		};
+	}
+
+	/**
+	 * &#x30DE;&#x30A6;&#x30B9;&#x306E;&#x5EA7;&#x6A19;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;
+	 * @param {WSHRobotPosition} position
+	 */
+	static setCursorPosition(position) {
+		System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;void SetCursorPos(int X, int Y)&quot;,
+			&quot;$api::SetCursorPos(&quot; + position.x + &quot;, &quot; + position.y + &quot;);&quot;
+		);
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {RobotGetHandleData} get_handle_data 
+	 * @returns {number}
+	 */
+	static getHandle(get_handle_data) {
+		let function_text;
+		// &#x7701;&#x7565;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x30CC;&#x30EB;&#x30DD;&#x30A4;&#x30F3;&#x30BF;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x5165;&#x529B;&#x5F15;&#x6570;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;
+		if(get_handle_data.classname &amp;&amp; get_handle_data.windowtext) {
+			function_text = &quot;IntPtr FindWindow(string lpClassName, string lpWindowName)&quot;;
+		}
+		else if(get_handle_data.classname) {
+			function_text = &quot;IntPtr FindWindow(string lpClassName, IntPtr lpWindowName)&quot;;
+		}
+		else {
+			function_text = &quot;IntPtr FindWindow(IntPtr lpClassName, string lpWindowName)&quot;;
+		}
+		let command = &quot;$api::FindWindow(&quot;;
+		command += (get_handle_data.classname ? &quot;\&quot;&quot; + get_handle_data.classname + &quot;\&quot;&quot; : &quot;0&quot;) + &quot;,&quot;;
+		command += (get_handle_data.windowtext ? &quot;\&quot;&quot; + get_handle_data.windowtext + &quot;\&quot;&quot; : &quot;0&quot;) + &quot;);&quot;;
+		return parseFloat(System.WindowsAPI( &quot;user32.dll&quot;, function_text, command));
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x540D;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {string} classname 
+	 * @returns {number}
+	 */
+	static getHandleOfClassName(classname) {
+		// console.log(Robot.getHandleOfClassName(&quot;Notepad&quot;));
+		return Robot.getHandle({classname : classname});
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x540D;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {number} handle 
+	 * @returns {string}
+	 */
+	static getClassName(handle) {
+		return System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;IntPtr GetClassName(IntPtr hWnd, System.Text.StringBuilder text, int count)&quot;,
+			&quot;$buff = New-Object System.Text.StringBuilder 256;$null = $api::GetClassName(&quot; + handle + &quot;, $buff, 256);$($buff.ToString());&quot;
+		);
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x540D;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {string} windowname 
+	 * @returns {number}
+	 */
+	static getHandleOfWindowText(windowname) {
+		// console.log(Robot.getHandleOfWindowName(&quot;&#x7121;&#x984C; - &#x30E1;&#x30E2;&#x5E33;&quot;);
+		return Robot.getHandle({windowtext : windowname});
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x306E;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x540D;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {number} handle 
+	 * @returns {string}
+	 */
+	static getWindowText(handle) {
+		return System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;IntPtr GetWindowText(IntPtr hWnd, System.Text.StringBuilder text, int count)&quot;,
+			&quot;$buff = New-Object System.Text.StringBuilder 256;$null = $api::GetWindowText(&quot; + handle + &quot;, $buff, 256);$($buff.ToString());&quot;
+		);
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x306E;&#x4F4D;&#x7F6E;&#x3068;&#x30B5;&#x30A4;&#x30BA;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {number} handle 
+	 * @returns {WSHRobotRect}
+	 */
+	static getWindowRect(handle) {
+		/*
+		&#x4EE5;&#x4E0B;&#x306E;&#x884C;&#x3092;1&#x884C;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;
+		Add-Type -TypeDefinition @&quot;
+		using System;
+		using System.Runtime.InteropServices;
+		public struct RECT { public int Left; public int Top; public int Right; public int Bottom; }
+		public class API {
+			[DllImport(&quot;user32.dll&quot;)] public extern static bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+			public static RECT getrect(IntPtr hwnd) { RECT rect = new RECT(); GetWindowRect(hwnd, out rect); return rect; }
+		}
+		&quot;@
+		$rect = [API]::getrect(x);
+		&quot;$($rect.Left),$($rect.Top),$($rect.Right),$($rect.Bottom)&quot;
+		*/
+		// eslint-disable-next-line quotes
+		const command = `Add-Type -TypeDefinition &quot;using System; using System.Runtime.InteropServices; public struct RECT { public int Left; public int Top; public int Right; public int Bottom; } public class API { [DllImport(&quot;&quot;user32.dll&quot;&quot;)] public extern static bool GetWindowRect(IntPtr hWnd, out RECT lpRect); public static RECT getrect(IntPtr hwnd) { RECT rect = new RECT(); GetWindowRect(hwnd, out rect); return rect; } }&quot;;  $rect = [API]::getrect(` + handle + `); &quot;$($rect.Left),$($rect.Top),$($rect.Right),$($rect.Bottom)&quot;`;
+		const rect = System.PowerShell(command);
+		const rect_data = rect.split(&quot;,&quot;);
+		if(rect_data.length !== 4) {
+			return null;
+		}
+		const left   = parseFloat(rect_data[0]) | 0;
+		const top    = parseFloat(rect_data[1]) | 0;
+		const right  = parseFloat(rect_data[2]) | 0;
+		const bottom = parseFloat(rect_data[3]) | 0;
+		return {
+			x		:left,
+			y		:top,
+			width	:right - left,
+			height	:bottom - top
+		};
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x306E;&#x4F4D;&#x7F6E;&#x3068;&#x30B5;&#x30A4;&#x30BA;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;
+	 * @param {number} handle 
+	 * @param {WSHRobotRect} rect 
+	 * @returns {void}
+	 */
+	static setWindowRect(handle, rect) {
+		System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;bool MoveWindow(IntPtr hWnd, int x, int y, int nWidth, int nHeight, int bRepaint)&quot;,
+			&quot;$api::MoveWindow(&quot; + handle + &quot; , &quot; + (rect.x|0) + &quot;, &quot; + (rect.y|0) + &quot;, &quot; + (rect.width|0) + &quot;, &quot; + (rect.height|0) + &quot;, 1 );&quot;
+		);
+	}
+
+	/**
+	 * &#x30A2;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x306A;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @returns {number}
+	 */
+	static getActiveWindow() {
+		return parseFloat(System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;IntPtr GetForegroundWindow()&quot;,
+			&quot;$api::GetForegroundWindow();&quot;
+		));
+	}
+
+	/**
+	 * &#x30A2;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x306A;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;
+	 * @param {number} handle 
+	 * @returns {void}
+	 */
+	static setActiveWindow(handle) {
+		System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;bool SetForegroundWindow(IntPtr hWnd)&quot;,
+			&quot;$api::SetForegroundWindow(&quot; + handle + &quot;);&quot;
+		);
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;ID&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+	 * @param {number} handle 
+	 * @returns {number}
+	 */
+	static getPID(handle) {
+		return parseFloat(System.WindowsAPI(
+			&quot;user32.dll&quot;,
+			&quot;IntPtr GetWindowThreadProcessId(IntPtr hWnd, out int ProcessId)&quot;,
+			&quot;$getpid = 0;$null = $api::GetWindowThreadProcessId(&quot; + handle + &quot;, [ref] $getpid);$getpid;&quot;
+		));
+	}
+
+	/**
+	 * &#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30BB;&#x30B9;ID&#x3092;&#x4FEE;&#x4E86;&#x3055;&#x305B;&#x308B;
+	 * @param {number} pid 
+	 */
+	static terminateProcess(pid) {
+		return System.run(&quot;taskkill /PID &quot; + pid, 0, true);
+	}
+
+	
+
+
+	// TODO &#x30DE;&#x30A6;&#x30B9;&#x3092;&#x79FB;&#x52D5;&#x3055;&#x305B;&#x305F;&#x308A;&#x3001;&#x30AD;&#x30FC;&#x30DC;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3059;&#x308B;&#x64CD;&#x4F5C;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x4E88;&#x5B9A;
+
+}
+
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

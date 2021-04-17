@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/SenkoWSH.js | senkowsh</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="JScirpt library for WSH that gathers various functions."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="senkowsh"><meta property="twitter:description" content="JScirpt library for WSH that gathers various functions."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/natade-jp/SenkoWSH"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#konpeito">konpeito</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/konpeito/Random.js~Random.html">Random</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#mojijs">mojijs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mojijs/Japanese.js~Japanese.html">Japanese</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mojijs/StringComparator.js~StringComparator.html">StringComparator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#senko">senko</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/CSV.js~CSV.html">CSV</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Dialog.js~Dialog.html">Dialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsArray.js~ExtendsArray.html">ExtendsArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsObject.js~ExtendsObject.html">ExtendsObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/ExtendsString.js~ExtendsString.html">ExtendsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Format.js~Format.html">Format</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/Robot.js~Robot.html">Robot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/SFile.js~SFile.html">SFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/senko/System.js~System.html">System</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OpenDirectoryOption">OpenDirectoryOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OpenFileOption">OpenFileOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PopupOption">PopupOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SaveAsOption">SaveAsOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-KeyEventOption">KeyEventOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseEventFCodes">MouseEventFCodes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseEventOption">MouseEventOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RobotGetHandleData">RobotGetHandleData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VirtualKeyCode">VirtualKeyCode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VirtualKeyCodes">VirtualKeyCodes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WSHRobotPosition">WSHRobotPosition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WSHRobotRect">WSHRobotRect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SystemExecResult">SystemExecResult</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/SenkoWSH.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * The script is part of SenkoWSH.
+ * 
+ * AUTHOR:
+ *  natade (http://twitter.com/natadea)
+ * 
+ * LICENSE:
+ *  The MIT license https://opensource.org/licenses/MIT
+ */
+
+import typeCSV from &quot;./senko/CSV.js&quot;;
+import typeDialog from &quot;./senko/Dialog.js&quot;;
+import typeSFile from &quot;./senko/SFile.js&quot;;
+import typeRobot from &quot;./senko/Robot.js&quot;;
+import typeFormat from &quot;./senko/Format.js&quot;;
+import typeRandom from &quot;./konpeito/Random.js&quot;;
+import typeJapanese from &quot;./mojijs/Japanese.js&quot;;
+import typeStringComparator from &quot;./mojijs/StringComparator.js&quot;;
+import typeSystem from &quot;./senko/System.js&quot;;
+
+/**
+ * @type {typeof typeCSV}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+CSV = typeCSV;
+
+/**
+ * @type {typeof typeDialog}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+Dialog = typeDialog;
+
+/**
+ * @type {typeof typeSFile}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+SFile = typeSFile;
+
+/**
+ * @type {typeof typeRobot}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+Robot = typeRobot;
+
+/**
+ * @type {typeof typeFormat}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+Format = typeFormat;
+
+/**
+ * @type {typeof typeRandom}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+Random = typeRandom;
+
+/**
+ * @type {typeof typeJapanese}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+Japanese = typeJapanese;
+
+/**
+ * @type {typeof typeStringComparator}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+StringComparator = typeStringComparator;
+
+/**
+ * @type {typeof typeSystem}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+System = typeSystem;
+
+/**
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-global-assign
+console = {
+	// @ts-ignore
+	log : function(text) {
+		// @ts-ignore
+		// eslint-disable-next-line no-undef
+		System.println(text);
+	}
+};
+
+import typeExtendsArray from &quot;./senko/ExtendsArray.js&quot;;
+import typeExtendsObject from &quot;./senko/ExtendsObject.js&quot;;
+import typeExtendsString from &quot;./senko/ExtendsString.js&quot;;
+
+/**
+ * @type {typeof typeExtendsArray}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+ExtendsArray = typeExtendsArray;
+
+/**
+ * @type {typeof typeExtendsObject}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+ExtendsObject = typeExtendsObject;
+
+/**
+ * @type {typeof typeExtendsString}
+ * @private
+ */
+// @ts-ignore
+// eslint-disable-next-line no-undef
+ExtendsString = typeExtendsString;
+
+/**
+ * @param {any} original 
+ * @param {any} extension
+ * @returns {any}
+ * @private
+ * @ignore
+ */
+const extendClass = function(original, extension) {
+	for(const key in extension) {
+		original.prototype[key] = function() {
+			const x = [];
+			x.push(this);
+			for(let i = 0 ; i &lt; arguments.length ; i++) {
+				x.push(arguments[i]);
+			}
+			return extension[key].apply(this, x);
+		};
+	}
+};
+
+extendClass(Array, typeExtendsArray);
+extendClass(Object, typeExtendsObject);
+extendClass(String, typeExtendsString);
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
